@@ -238,30 +238,25 @@
 
         <article class="project">
           <div class="project-title">
-            <h3>Distributed Tracing</h3>
+            <h3>Distributed Tracing for Oban Job Pipelines</h3>
             <span class="project-label">OBSERVABILITY</span>
           </div>
+            <p> Extended <strong>Oban</strong> with distributed tracing to make asynchronous job pipelines observable end-to-end.
+            Built a wrapper around job creation that starts or attaches the current span context and propagates tracing
+            information into newly enqueued jobs. </p>
 
-          <p>
-            Built and evolved distributed tracing for critical business workflows
-            using <strong>OpenTelemetry</strong>,
-            including reusable instrumentation and testing abstractions adopted
-            across multiple software teams.
-          </p>
+            <p> Integrated with Oban's telemetry events to track job lifecycle events, including completions, retries and exceptions.
+            Extended the same tracing model to cron jobs scheduled during application startup,
+            ensuring scheduled workloads were connected to the application's trace context. </p>
 
-          <p>
-            Developed end-to-end trace testing covering span trees, attributes,
-            events, status and exceptions, and implemented automatic trace-context
-            propagation across independent Elixir processes by injecting and extracting the <code>traceparent</code> 
-            from the current span context.
-          </p>
+            <p> Added <strong>OpenObserve trace deep links</strong> to job metadata,
+            allowing engineers to move directly from an Oban job to its corresponding trace when investigating production behavior. </p>
 
-          <p>
-            Experience in <strong>OpenObserve</strong> performance optimization, by addressing high speed ingestion, large span trees and query performance.
-          </p>
+            <p> The resulting instrumentation made it possible to follow an entire asynchronous pipeline in a single trace:
+            from an initial job enqueue, through jobs that enqueue subsequent work, to completion, retries and failures.</p>
 
           <div class="project-stack">
-            OpenTelemetry · OpenObserve · Elixir
+            OpenTelemetry · OpenObserve · Elixir · Oban
           </div>
         </article>
       </section>
