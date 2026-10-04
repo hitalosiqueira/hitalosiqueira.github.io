@@ -259,6 +259,45 @@
             OpenTelemetry · OpenObserve · Elixir · Oban
           </div>
         </article>
+        <article class="project">
+            <div class="project-title">
+            <h3>Error Tracker Notifications</h3>
+            <span class="project-label">RELIABILITY · TESTING · INTEGRATIONS</span>
+          </div>
+
+          <p>
+            Took ownership of an existing error-notification implementation that had
+            been delivered without test coverage. Backfilled unit tests and refactored
+            the implementation to establish clear boundaries between three concerns:
+            <strong>error-state business logic</strong>, notification rendering, and
+            the external HTTP integration with Azure Workflows used to deliver
+            notifications to Microsoft Teams.
+          </p>
+
+          <p>
+            The resulting test isolation made it possible to independently verify
+            error lifecycle behavior, including new occurrences and errors that had
+            previously been considered resolved, without coupling business logic tests
+            to notification formatting or external services.
+          </p>
+
+          <p>
+            With the behavior covered and the integration boundaries established,
+            extended the system to support <strong>multiple teams and multiple
+            notification workflows</strong> within a shared monorepo, allowing each
+            team to route error notifications to its own Microsoft Teams channel.
+          </p>
+
+          <p>
+            The work also resulted in a <strong>contribution to the open-source
+            project</strong> used by the implementation, addressing a limitation
+            encountered while extending the integration.
+          </p>
+
+          <div class="project-stack">
+            Elixir · ErrorTracker
+          </div>
+        </article>
       </section>
     </main>
   </div>
