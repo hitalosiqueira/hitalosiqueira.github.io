@@ -238,6 +238,46 @@
 
         <article class="project">
           <div class="project-title">
+            <h3>SAML to OIDC Authentication Migration</h3>
+            <div class="project-label">IDENTITY · PLATFORM ENGINEERING · SECURITY</div>
+          </div>
+
+          <p>
+            Replaced SAML authentication with <strong>OIDC</strong> in a shared internal
+            authentication package responsible for user authentication and
+            role-based access control. Designed the integration to remain fully
+            <strong>backwards compatible</strong>, allowing existing applications to
+            continue using SAML while enabling migration to OIDC through a
+            configuration switch.
+          </p>
+
+          <p>
+            Simplified adoption by providing convenience functions for applications to
+            start and configure the authentication supervision tree as part of their
+            application startup, reducing the integration work required by consuming
+            teams.
+          </p>
+
+          <p>
+            Built a purpose-designed <strong>fake OIDC identity provider</strong> for
+            integration testing. The provider implements only the endpoints required
+            by the authentication flow, while supporting the complete flow from
+            authorization through callback, token exchange and user information,
+            including sessions populated with identity claims and userinfo data.
+          </p>
+
+          <p>
+            This enabled end-to-end authentication tests against a real HTTP-based
+            identity-provider flow without depending on an external identity provider,
+            while keeping the test environment deterministic and under application
+            control.
+          </p>
+          <div class="project-stack">
+            Elixir · PlugConn · Oidcc · Oidcc-plug
+          </div>
+        </article>
+        <article class="project">
+          <div class="project-title">
             <h3>Distributed Tracing for Oban Job Pipelines</h3>
             <span class="project-label">OBSERVABILITY</span>
           </div>
